@@ -37,13 +37,28 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
             })
             window.alert("profile uploaded successfully")
            }
-           function pushCTEvent(){
-                clevertap.event.push("WebEvent", {
-                    "Action":"Success",
-                    "Category":"Shirts",
-                    "Price":59.99,});
-                    window.alert("Event pushed to CT");
-           }
+           function pushCTEvent()
+	   {
+
+		   //Webview event in Android
+		   if (window.CleverTap)
+            		{
+				var props = {Action: 'Success', Category: 'Shirts', Price:1500};
+                		CleverTap.pushEvent("WebEvent",JSON.stringify(props));
+                		document.getElementById("demo").innerHTML = "CT Webview event raised";
+				window.alert("Webview Event Raised")
+            		}
+		   else
+            		{
+				clevertap.event.push("WebEvent", {
+                    		"Action":"Success",
+                    		"Category":"Shirts",
+                    		"Price":59.99,});
+            			document.getElementById("demo").innerHTML = "CT Webview event Not raised";
+				window.alert("Web Event Raised")
+            		}
+	     }
+                    
             
             //document.getElementById('demo').innerHTML = "Profile uploaded successfully";
        </script>     
