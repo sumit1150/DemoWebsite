@@ -23,40 +23,44 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
             clevertap.onUserLogin.push({
                     "Site": {
                     "Name": "Sumit Sharma",            // String
-                    "Identity": 115037,              // String or number
-                    "Email": "sumitkumar782@gmail.com",         // Email address of the user
-                    "Phone": "+919351210270",           // Phone (with the country code)
+                    "Identity": 9855290227,              // String or number
+                    "Email": "sumit.kumar@clevertap.com",         // Email address of the user
+                    "Phone": "+919855290227",           // Phone (with the country code)
                     "Gender": "M",                     // Can be either M or F
                     "DOB": new Date(),                 // Date of Birth. Date object
                     // optional fields. controls whether the user will be sent email, push etc.
-                    "MSG-email": false,                // Disable email notifications
+                    "MSG-email": true,                // Disable email notifications
                     "MSG-push": true,                  // Enable push notifications
-                    "MSG-sms": false,                   // Enable sms notifications
-                    "MSG-whatsapp": false,             // Enable WhatsApp notification
+                    "MSG-sms": true,                   // Enable sms notifications
+                    "MSG-whatsapp": true,             // Enable WhatsApp notification
                 }
             })
             window.alert("profile uploaded successfully")
            }
-           function pushCTEvent()
+           function pushCTEvent()	   
 	   {
-
-		   //Webview event in Android
-		   if (window.CleverTap)
-            		{
-				var props = {Action: 'Success', Category: 'Shirts', Price:1500};
-                		CleverTap.pushEvent("WebEvent",JSON.stringify(props));
-                		document.getElementById("demo").innerHTML = "CT Webview event raised";
-				window.alert("Webview Event Raised")
-            		}
-		   else
-            		{
-				clevertap.event.push("WebEvent", {
+		   clevertap.event.push("WebEvent", {
                     		"Action":"Success",
                     		"Category":"Shirts",
                     		"Price":59.99,});
-            			document.getElementById("demo").innerHTML = "CT Webview event Not raised";
 				window.alert("Web Event Raised")
-            		}
+
+		   //Webview event in Android
+		  //  if (window.CleverTap)
+    //         		{
+				// var props = {Action: 'Success', Category: 'Shirts', Price:1500};
+    //             		CleverTap.pushEvent("WebEvent",JSON.stringify(props));
+    //             		document.getElementById("demo").innerHTML = "CT Webview event raised";
+				// window.alert("Webview Event Raised")
+    //         		}
+		  //  else
+    //         		{
+				// clevertap.event.push("WebEvent", {
+    //                 		"Action":"Success",
+    //                 		"Category":"Shirts",
+    //                 		"Price":59.99,});
+				// window.alert("Web Event Raised")
+    //         		}
 	     }
                     
             
