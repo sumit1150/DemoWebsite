@@ -5,7 +5,7 @@
 <script type="text/javascript">
 var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
  // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-clevertap.account.push({"id": "4W44-Z4K-K65Z"}); //Zeke Account ID: W44-Z4K-K65Z, Sumit 001 Account ID: 4RR-6Z7-Z76Z
+clevertap.account.push({"id": "4RR-6Z7-Z76Z"}); //Zeke Account ID: W44-Z4K-K65Z, Sumit 001 Account ID: 4RR-6Z7-Z76Z
 clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
  (function () {
@@ -44,12 +44,16 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
                     "Price":59.99,});
                     window.alert("Event pushed to CT");
            }
+		 function home(){
+                window.location.href="https://sumit1150.github.io/DemoWebsite/index.html"
+           }
             
             //document.getElementById('demo').innerHTML = "Profile uploaded successfully";
        </script>     
         <p>This is second page</p>
         <button type="button" name="Push Profile" onclick="profilePush()">Click here to Push a CT Profile</button><br><br>
-        <button type="button" name="Push Event" onclick="pushCTEvent()">Click here to Push a CT Event</button>
+        <button type="button" name="Push Event" onclick="pushCTEvent()">Click here to Push a CT Event</button><be><be>
+	<button type="button" name="Back" onclick="home()">Go to Homepage</button>
         <p id="pushProfileText"></p>
     </body>
 </html>
