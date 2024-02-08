@@ -27,8 +27,8 @@ clevertap.dismissSpamControl = true;
 		{
   			// Call Android interface 
 			CleverTap.onUserLogin(JSON.stringify(props));
-	 		window.alert("profile uploaded successfully")
-			CleverTap.pushEvent("profile_push_success");
+	 		window.alert("profile uploaded successfully");
+			clevertap.event.push("profile_push_success");
 		}
 		else
 		{
@@ -48,8 +48,8 @@ clevertap.dismissSpamControl = true;
                     	"MSG-whatsapp": true,             // Enable WhatsApp notification
                 }
             			}) 
-			window.alert("profile uploaded successfully")
-			CleverTap.pushEvent("profile_push_success");
+			window.alert("profile uploaded successfully");
+			clevertap.event.push("profile_push_success");
 		   }
 		   
            }
