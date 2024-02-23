@@ -29,7 +29,7 @@ clevertap.dismissSpamControl = true;
 			CleverTap.onUserLogin(JSON.stringify(props));
 	 		window.alert("profile uploaded successfully");
 			clevertap.event.push("profile_push_success");
-			clevertap.event.push("profile_push_success1");
+			
 		}
 		else
 		{
@@ -51,7 +51,7 @@ clevertap.dismissSpamControl = true;
             			}) 
 			window.alert("profile uploaded successfully");
 			clevertap.event.push("profile_push_success");
-			clevertap.event.push("profile_push_success1");
+			
 		   }
 		   
            }
@@ -92,12 +92,17 @@ clevertap.dismissSpamControl = true;
  			 window.location.href="https://sumit1150.github.io/DemoWebsite/second.html"
 				}
 		
-                    
+                    function push_profilePushSuccess(){
+			 clevertap.event.push("profile_push_success1");   
+		    }
             
             //document.getElementById('demo').innerHTML = "Profile uploaded successfully";
+		
        </script>     
         <p>This page is having Clevertap SDK in-built index.html</p>
         <button type="button" name="Push Profile" onclick="profilePush()">Click here to Push a CT Profile</button><br><br>
+	     <button type="button" name="Push Profile" onclick="push_profilePushSuccess()">Push profile_push_success1 event</button><br><br>
+	    <button type="button" name="First Page" onclick="pageViewEvent()">Page View</button><br><br>
         <button type="button" name="Push Event" onclick="pushCTEvent()">Click here to Push a CT Event</button><br><br>
 	<button type="button" name="Second page" onclick="second()">Second Page</button><br><br>
 	<button type="button" name="First Page" onclick="pageViewEvent()">Page View</button><br><br>
