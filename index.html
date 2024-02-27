@@ -88,6 +88,13 @@ clevertap.dismissSpamControl = true;
                     		"page number":1,});
 				window.alert("PageView Event Raised")
 		}
+		function pageVisitEvent(){
+			clevertap.event.push("pageVisitEvent", {
+                    		"Action":"Success",
+                    		"URL":"https://sumit1150.github.io/DemoWebsite/index.html",
+                    		"page number":1,});
+				window.alert("PageVisit Event Raised")
+		}
 		function second() {
  			 window.location.href="https://sumit1150.github.io/DemoWebsite/second.html"
 				}
@@ -121,6 +128,7 @@ clevertap.notificationCallback = function(msg){
         <button type="button" name="Push Event" onclick="pushCTEvent()">Click here to Push a CT Event</button><br><br>
 	<button type="button" name="Second page" onclick="second()">Second Page</button><br><br>
 	<button type="button" name="First Page" onclick="pageViewEvent()">Page View</button><br><br>
+	    <button type="button" name="First Page" onclick="pageVisitEvent()">Page View</button><br><br>
         <p id="pushProfileText"></p>
     </body>
 </html>
