@@ -4,14 +4,13 @@
     <title>
       <h5>Welcome to my Demo Website with Clevertap SDK</h5>
 <script type="text/javascript">
+  rudderanalytics = window.rudderanalytics = [];
 !function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
 e.load("2dMGXbKtHJSyT3l0rnMK06t88Gm","https://clevertapvkdnk.dataplane.rudderstack.com"),
 e.page()}();
-</script>
-    </title>
-  </head>
-  <body>
-    <script>
+
+rudderanalytics.load(2dMGXbKtHJSyT3l0rnMK06t88Gm, "https://clevertapvkdnk.dataplane.rudderstack.com", {logLevel: 'DEBUG'});
+      
       function profilePush() {
         if (window.CleverTap) {
           // Call Android interface 
@@ -57,7 +56,11 @@ rudderanalytics.track(
           window.alert("Web Event Raised")
         }
       }
-    </script>
+  
+</script>
+    </title>
+  </head>
+  <body>
     <p>RudderStack CleverTap Integration</p>
    <button type="button" name="Push Profile" onclick="profilePush()">Click here to Push a CT Profile</button><br><br>
    <button type="button" name="Push Event" onclick="pushEvent()">Click here to Push a Rudderstack Event</button><br><br>
