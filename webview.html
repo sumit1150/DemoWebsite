@@ -44,8 +44,9 @@
   <body>
     <script>
       function profilePush() {
-        if (window.CleverTap) {
+        if (window.AndroidJSInterface) {
           // Call Android interface 
+          
           
 
           window.alert("Webview profile uploaded successfully");
@@ -74,7 +75,13 @@ window.rudderanalytics.identify(
 
       function pushEvent() {
         //Webview event in Android
-        if (window.CleverTap) {
+        if (window.AndroidJSInterface) {
+          window.AndroidInterface.sendEventToRudderStack('RudderWebviewEvent', '{"Action": "Success"}');
+          window.AndroidInterface.track(
+                        "RudderWebviewEvent2",
+                        new RudderProperty()
+                                .putValue("status", "Success")
+                );
           window.alert("Webview Event Raised")
         } else {
 window.rudderanalytics.track(
