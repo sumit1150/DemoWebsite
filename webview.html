@@ -2,21 +2,47 @@
 <html>
   <head>
     <title>
-      <h5>Welcome to my Demo Website with Clevertap SDK</h5>
-<script type="text/javascript">
-  rudderanalytics = window.rudderanalytics = [];
-!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
-e.load("2dMGXbKtHJSyT3l0rnMK06t88Gm","https://clevertapvkdnk.dataplane.rudderstack.com"),
-e.page()}();
+      <h5>Welcome to my Demo Website with Clevertap<>Rudderstack SDK</h5>
+      </title>
+  <script>
+ var rudderanalytics = window.rudderanalytics = [];
+  var methods = [
+    "load",
+    "page",
+    "track",
+    "identify",
+    "alias",
+    "group",
+    "ready",
+    "reset",
+    "getAnonymousId",
+    "setAnonymousId",
+    "getUserId",
+    "getUserTraits",
+    "getGroupId",
+    "getGroupTraits",
+    "startSession",
+    "endSession",
+    "getSessionId"
+  ];
+  for (var i = 0; i < methods.length; i++) {
+    var method = methods[i];
+    rudderanalytics[method] = (function (methodName) {
+      return function () {
+        rudderanalytics.push(
+          [methodName].concat(Array.prototype.slice.call(arguments))
+        );
+      };
+    })(method);
+  }
 
-rudderanalytics.load(2dMGXbKtHJSyT3l0rnMK06t88Gm, "https://clevertapvkdnk.dataplane.rudderstack.com", {logLevel: 'DEBUG'});
-  
+  rudderanalytics.load("2dMGXbKtHJSyT3l0rnMK06t88Gm", "https://clevertapvkdnk.dataplane.rudderstack.com", {logLevel: 'DEBUG'});
+  rudderanalytics.page();
 </script>
-    </title>
+<script src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js"></script> 
   </head>
   <body>
     <script>
-    rudderanalytics = window.rudderanalytics = [];
       function profilePush() {
         if (window.CleverTap) {
           // Call Android interface 
@@ -26,7 +52,7 @@ rudderanalytics.load(2dMGXbKtHJSyT3l0rnMK06t88Gm, "https://clevertapvkdnk.datapl
         } else {
           //Web profile Push
 
-rudderanalytics.identify(
+window.rudderanalytics.identify(
   "RudderWebsite001", {
     firstName: "Rudder",
     lastName: "Website",
@@ -51,7 +77,7 @@ rudderanalytics.identify(
         if (window.CleverTap) {
           window.alert("Webview Event Raised")
         } else {
-rudderanalytics.track(
+window.rudderanalytics.track(
   "RudderWebsiteEvent", {
     status: "Success"
   },
