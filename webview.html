@@ -77,7 +77,6 @@ window.rudderanalytics.identify(
         //Webview event in Android
         if (window.AndroidJSInterface) {
           window.AndroidInterface.sendEventToRudderStack('RudderWebviewEvent',{"Action":"Success"});
-                );
           window.alert("Webview Event Raised")
         } 
         else {
