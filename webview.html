@@ -76,14 +76,11 @@ window.rudderanalytics.identify(
       function pushEvent() {
         //Webview event in Android
         if (window.AndroidJSInterface) {
-          window.AndroidInterface.sendEventToRudderStack('RudderWebviewEvent');
-          window.AndroidInterface.track(
-                        "RudderWebviewEvent2",
-                        new RudderProperty()
-                                .putValue("status", "Success")
+          window.AndroidInterface.sendEventToRudderStack('RudderWebviewEvent',{"Action":"Success"});
                 );
           window.alert("Webview Event Raised")
-        } else {
+        } 
+        else {
 window.rudderanalytics.track(
   "RudderWebsiteEvent", {
     status: "Success"
