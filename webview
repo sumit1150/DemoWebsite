@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>
+      <h5>Welcome to my Demo Website with Clevertap SDK</h5>
+<script type="text/javascript">
+!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
+e.load("2dMGXbKtHJSyT3l0rnMK06t88Gm","https://clevertapvkdnk.dataplane.rudderstack.com"),
+e.page()}();
+</script>
+    </title>
+  </head>
+  <body>
+    <script>
+      function profilePush() {
+        if (window.CleverTap) {
+          // Call Android interface 
+          
+
+          window.alert("Webview profile uploaded successfully");
+        } else {
+          //Web profile Push
+
+rudderanalytics.identify(
+  "RudderWebsite001", {
+    firstName: "Rudder",
+    lastName: "Website",
+    email: "Rudderwebsite@gmail.com",
+    phone: "+919005555555"
+  }, {
+    page: {
+      path: "/webview.html",
+      title: "RudderStack"
+    }
+  },
+  () => {
+    console.log("identify call");
+  }
+);
+      window.alert("Web profile uploaded successfully");
+        }
+      }
+
+      function pushEvent() {
+        //Webview event in Android
+        if (window.CleverTap) {
+          window.alert("Webview Event Raised")
+        } else {
+rudderanalytics.track(
+  "RudderWebsiteEvent", {
+    status: "Success"
+  },
+  () => {
+    console.log("track call");
+  }
+);
+          window.alert("Web Event Raised")
+        }
+      }
+    </script>
+    <p>RudderStack CleverTap Integration</p>
+   <button type="button" name="Push Profile" onclick="profilePush()">Click here to Push a CT Profile</button><br><br>
+   <button type="button" name="Push Event" onclick="pushEvent()">Click here to Push a Rudderstack Event</button><br><br>
+  </body>
+</html>
