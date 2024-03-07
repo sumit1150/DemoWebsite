@@ -10,7 +10,13 @@ e.load("2dMGXbKtHJSyT3l0rnMK06t88Gm","https://clevertapvkdnk.dataplane.ruddersta
 e.page()}();
 
 rudderanalytics.load(2dMGXbKtHJSyT3l0rnMK06t88Gm, "https://clevertapvkdnk.dataplane.rudderstack.com", {logLevel: 'DEBUG'});
-      
+  
+</script>
+    </title>
+  </head>
+  <body>
+    <script>
+    rudderanalytics = window.rudderanalytics = [];
       function profilePush() {
         if (window.CleverTap) {
           // Call Android interface 
@@ -56,11 +62,7 @@ rudderanalytics.track(
           window.alert("Web Event Raised")
         }
       }
-  
-</script>
-    </title>
-  </head>
-  <body>
+    </script>
     <p>RudderStack CleverTap Integration</p>
    <button type="button" name="Push Profile" onclick="profilePush()">Click here to Push a CT Profile</button><br><br>
    <button type="button" name="Push Event" onclick="pushEvent()">Click here to Push a Rudderstack Event</button><br><br>
