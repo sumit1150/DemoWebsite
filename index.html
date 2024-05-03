@@ -103,6 +103,11 @@ clevertap.dismissSpamControl = true;
                     		"page number":1,});
 				window.alert("PageVisit Event Raised")
 		}
+		function bajajLogin(){
+			clevertap.event.push("bajajLoginEvent", {
+                    		"Action":"Success"});
+				window.alert("Bajaj Login event called")
+		}
 		function second() {
  			 window.location.href="https://sumit1150.github.io/DemoWebsite/second.html"
 				}
@@ -138,6 +143,7 @@ clevertap.notificationCallback = function(msg){
 	<button type="button" name="Second page" onclick="second()">Second Page</button><br><br>
 	<button type="button" name="First Page" onclick="pageViewEvent()">Page View</button><br><br>
 	    <button type="button" name="First Page" onclick="pageVisitEvent()">Page visit</button><br><br>
+	    <button type="button" name="Bajaj Login" onclick="bajajLogin()">Bajaj Login button</button><br><br>
         <p id="pushProfileText"></p>
     </body>
 </html>
