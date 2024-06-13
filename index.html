@@ -86,8 +86,20 @@ clevertap.dismissSpamControl = true;
 	    <button type="button" name="Bajaj Login" onclick="bajajLogin()">Bajaj Login button</button><br><br>
         <p id="pushProfileText"></p>
 
-	    
+	    <div class="btn">CLOSE</div>
+
 	<script>
+
+var btn = document.querySelector('.btn');
+var overlay = window.parent.document.getElementById('intentOpacityDiv');
+var wrapper = window.parent.document.getElementById('intentPreview');
+btn.addEventListener('click', closePopUp);
+function closePopUp() { 
+  setTimeout(() => {
+    overlay.remove(); 
+    wrapper.remove();
+  }, 0); 
+}
 
 		function invokeJSFunction(){
 			console.log("JS Function called");
@@ -95,6 +107,8 @@ clevertap.dismissSpamControl = true;
 			 var formUrl = 'https://forms.gle/J8LadS8jACNy9Z7P9';
                           window.open(formUrl, '_blank');
 		}
+
+
 		
            function profilePush()
 	   {
